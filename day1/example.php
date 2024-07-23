@@ -6,5 +6,4 @@ function fib($a){
     }
     return $res;
 }
-
 print_r(fib(10));
