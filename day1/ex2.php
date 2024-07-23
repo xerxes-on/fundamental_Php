@@ -18,10 +18,12 @@ function enlargeArrayImage($arr){
     }
     return $temp;
 }
+
 $a = enlargeArrayImage($arr) ;
+print_r( $a);
 foreach ($a as $ar){
     foreach ($ar as $b){
-        echo $b;
+        print_r( $b);
     }
     echo "<br>";
 }
