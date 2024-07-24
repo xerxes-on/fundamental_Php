@@ -8,4 +8,4 @@ function buildQueryString($a){
     }
     return $res;
 }
-print_r(buildQueryString('P=34&tags=23&mag=true'));
+print_r(buildQueryString('P=34&tags=23&mag=true&tag=false'));

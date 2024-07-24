@@ -1,11 +1,13 @@
 {
-    "name": "vendon/first",
-    "description": "My first package to test",
-    "type": "project",
+    "name": "javohir/isbalanced",
+    "description": "A function that checks if balanced",
+    "require": {},
     "autoload": {
         "psr-4": {
-            "Vendon\\First\\": "src/"
-        }
-    },
-    "require": {}
+            "day1\\": "src"
+        },
+        "files": [
+            "src/isBalanced.php"
+        ]
+    }
 }

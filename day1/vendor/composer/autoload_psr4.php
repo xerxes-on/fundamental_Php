@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Vendon\\First\\' => array($baseDir . '/src'),
+    'day1\\' => array($baseDir . '/src'),
 );
