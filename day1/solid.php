@@ -1,14 +1,24 @@
 <?php
-abstract class CarDetail {
-   protected $isBroken;
-   public function __construct($isBroken)
-   {
-       $this->isBroken = $isBroken;
-   }
-   public function isBroken()
-   {
-       return $this->isBroken;
-   }
+
+
+interface DamageCheckable
+{
+    public function isDamaged(): bool;
+}
+
+abstract class CarDetail implements DamageCheckable
+{
+    protected $isDamaged;
+
+    public function __construct(bool $isDamaged)
+    {
+        $this->isDamaged = $isDamaged;
+    }
+
+    public function isDamaged(): bool
+    {
+        return $this->isDamaged;
+    }
 }
 
 class Door extends CarDetail
@@ -18,25 +28,46 @@ class Door extends CarDetail
 class Tyre extends CarDetail
 {
 }
-class Car
+
+class Paint extends CarDetail
 {
-   private $details;
-   public function __construct(array $details)
-   {
-       $this->details = $details;
-   }
-   public function isBroken()
-   {
-       foreach ($this->details as $detail) {
-           if ($detail->isBroken()) {
-               return true;
-           }
-       }
-       return false;
-   }
-   public function isPaintingDamaged()
-   {
-       // MAKE AN IMPLEMENTATION
-   }
 }
-$car = new Car([new Door(true), new Tyre(false)]); // we pass a list of all details
+
+class Car implements DamageCheckable
+{
+    private $details;
+
+    public function __construct(array $details)
+    {
+        $this->details = $details;
+    }
+
+    public function isDamaged(): bool
+    {
+        foreach ($this->details as $detail) {
+            if ($detail->isDamaged()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function isPaintingDamaged(): bool
+    {
+        foreach ($this->details as $detail) {
+            if ($detail instanceof Paint && $detail->isDamaged()) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+$car = new Car([
+    new Door(false),
+    new Tyre(false),
+    new Paint(true),
+]);
+
+var_dump($car->isDamaged());
+var_dump($car->isPaintingDamaged());

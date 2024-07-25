@@ -1,5 +1,6 @@
 <?php
-function buildQueryString($a){
+function buildQueryString($a): array
+{
     $arr = explode("&", $a);
     $res = [];
     foreach ($arr as $ar){
