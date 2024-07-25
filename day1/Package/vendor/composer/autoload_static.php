@@ -4,21 +4,17 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite7048e67a8c26658a1e18b8986d18b53
+class ComposerStaticInitd751713988987e9331980363e24189ce
 {
-    public static $files = array (
-        '3073f40fa90ad51277c311d671ef1aa1' => __DIR__ . '/../..' . '/src/isBalanced.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'd' => 
+        'j' => 
         array (
-            'day1\\' => 5,
+            'javohir\\isBalanced\\' => 19,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'day1\\' => 
+        'javohir\\isBalanced\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -31,9 +27,9 @@ class ComposerStaticInite7048e67a8c26658a1e18b8986d18b53
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite7048e67a8c26658a1e18b8986d18b53::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite7048e67a8c26658a1e18b8986d18b53::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite7048e67a8c26658a1e18b8986d18b53::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd751713988987e9331980363e24189ce::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd751713988987e9331980363e24189ce::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd751713988987e9331980363e24189ce::$classMap;
 
         }, null, ClassLoader::class);
     }

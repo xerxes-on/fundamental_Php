@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'day1\\' => array($baseDir . '/src'),
+    'javohir\\isBalanced\\' => array($baseDir . '/src'),
 );

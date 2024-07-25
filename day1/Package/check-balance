@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use javohir\isBalanced\BalancedParentheses;
+
+if ($argc !== 2) {
+    echo "Usage: check-balance <string>\n";
+    exit(1);
+}
+
+$input = $argv[1];
+$result = BalancedParentheses::isBalanced($input) ? 'true' : 'false';
+echo "$result\n";
