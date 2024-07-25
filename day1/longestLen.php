@@ -7,15 +7,18 @@ function longestLength($s){
         if(in_array($a[$i],$temp)){
             $longest[] = $temp;
             $temp = [];
+            $temp[] = $a[$i];
+        }else{
+            $temp[] = $a[$i];
         }
-        $temp[] = $a[$i];
     }
+
     if(empty($longest)){
-        return [$temp, count($temp)];
-    }elseif(count($longest[0])>count($temp)){
-        return [$longest[0], count($longest[0])];
+        return count($temp);
+    }elseif(max($longest)>count($temp)){
+        return count(max($longest));
     }else {
-        return [$temp, count($temp)];
+        return count($temp);
     }
 }
-print_r(longestLength('abcdeef'));
+print_r(longestLength('aabcdefdfg'));
