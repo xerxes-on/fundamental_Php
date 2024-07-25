@@ -5,25 +5,19 @@ $arr = [
     ['*',' ',' ','*'],
     ['*','*','*','*']
 ];
-function enlargeArrayImage($arr){
-    $temp = [];
-    foreach($arr as $item){
-        $t = [];
-        foreach($item as $i){
-            $t[] = $i;
-            $t[] = $i;
+function enlargeArrayImage($arr): array
+{
+    $resul_array = [];
+    foreach($arr as $row){
+        $temp_array = [];
+        foreach($row as $row_element){
+            $temp_array[] = $row_element;
+            $temp_array[] = $row_element;
         }
-        $temp[] = $t;
-        $temp[] = $t;
+        $resul_array[] = $temp_array;
+        $resul_array[] = $temp_array;
     }
-    return $temp;
+    return $resul_array;
 }
 
-$a = enlargeArrayImage($arr) ;
-print_r( $a);
-foreach ($a as $ar){
-    foreach ($ar as $b){
-        print_r( $b);
-    }
-    echo "<br>";
-}
+print_r(enlargeArrayImage($arr));
