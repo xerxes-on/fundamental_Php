@@ -1,11 +1,10 @@
 <?php
 function addDigits($num){
-    $t = $num;
+    $result = $num;
     do{
-        $a = str_split(strval($t));
-        $t = array_sum($a);
-    }while (strlen(strval($t)) > 1);
-    return $t;
-
+        $a = str_split(strval($result));
+        $result = array_sum($a);
+    }while (strlen(strval($result)) > 1);
+    return $result;
 }
-var_dump(addDigits(8953));
+var_dump(addDigits(89753));
