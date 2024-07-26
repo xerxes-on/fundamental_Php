@@ -1,12 +1,12 @@
 <?php
 
 
-interface DamageCheckable
+interface DamageCheck
 {
     public function isDamaged(): bool;
 }
 
-abstract class CarDetail implements DamageCheckable
+abstract class CarDetail implements DamageCheck
 {
     protected $isDamaged;
 
@@ -33,7 +33,7 @@ class Paint extends CarDetail
 {
 }
 
-class Car implements DamageCheckable
+class Car implements DamageCheck
 {
     private $details;
 
@@ -64,9 +64,9 @@ class Car implements DamageCheckable
 }
 
 $car = new Car([
-    new Door(false),
-    new Tyre(false),
-    new Paint(true),
+    new Door(true),
+    new Tyre(true),
+    new Paint(false),
 ]);
 
 var_dump($car->isDamaged());
