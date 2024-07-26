@@ -1,12 +1,14 @@
 <?php
-function buildQueryString($a): array
+function buildQueryString($input): array
 {
-    $arr = explode("&", $a);
-    $res = [];
-    foreach ($arr as $ar){
-        $temp = explode("=", $ar);
-        $res[$temp[0]] = $temp[1];
+    $arr = explode("&", $input);
+    $resulting_array = [];
+    foreach ($arr as $array_element){
+        $temp = explode("=", $array_element);
+        $resulting_array[$temp[0]] = $temp[1];
     }
-    return $res;
+        ksort($resulting_array);
+
+    return $resulting_array;
 }
-print_r(buildQueryString('P=34&tags=23&mag=true&tag=false'));
+print_r(buildQueryString('wag1=php&tag2=javascript&bags=2'));
